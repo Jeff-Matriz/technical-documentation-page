@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+html, body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.title{
+	background: #111;
+	padding: 30px 0;
+	text-align: center;
+	color: #fff;
+}
+header{
+	font-size: 26px;
+	margin: 50px 0;
+	padding: 10px 0;
+	background: #222;
+	color: #fff;
+	text-align: center;
+}
+.spc-header{
+	margin-top: 0;
+	background: #111;
+}
+#nav-bar{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+#nav-bar > a{
+	text-decoration: none;
+	color: #333;
+	padding: 5px 0;
+}
+#nav-bar > a:hover{
+	color: #fff;
+	background: #222;
+}
+
+#main-doc{
+	margin: 15vh 5vw; 
+}
+
+code{
+	width: 100%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.up-button{
+	width: 60px;
+	height: 60px;
+	background: #222;
+	border-radius: 50%;
+	position: fixed;
+	bottom: 5vh;
+	right: 5vw;
+}
+
+.up-button > a{
+	font-size: 48px;
+	color: white;
+	text-decoration: none;
+	position: relative;
+	top: 11px;
+	left: 16px;
+}
+
+footer{
+	color: #fff;
+	background: #111;
+	padding: 15px;
+	display: relative;
+}
+
+footer > span > a{
+	color: #ccc;
+	text-decoration: none;
+}
+footer > span > a:hover{
+	background: #ccc;
+}
+
+#left-nav{
+	height: 100%;
+	width: 20%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #fff;
+	display: none;
+	overflow: scroll;
+}
+
+#left-nav > a{
+	color: #333;
+	text-decoration: none;
+	padding: 5px 20px;
+	font-size: 20px;
+}
+
+#left-nav > a:hover{
+	background: #333;
+	color: #fff;
+}
+
+@media screen and (min-width: 760px){
+	#nav-bar{
+		display: none;
+	}
+	#left-nav{
+		display: flex;
+		flex-direction: column;
+	}
+	.title{
+		display: none;
+	}
+	#main-doc{
+		margin-top: 0;
+		margin-left: 25% !important;
+	}
+	.up-button{
+		display: none;
+	}
+	footer{
+		margin-left: 20%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

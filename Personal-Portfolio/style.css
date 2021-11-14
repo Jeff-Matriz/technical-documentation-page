@@ -1,0 +1,260 @@
+html, body{
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+	font-family: 'Lato', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+#navbar{
+	height: 10vh;
+	width: 100%;
+	background: #79B4B7;
+	border: none;
+}
+
+#navbar > div{
+	float: right;
+	margin: 2.5vh;
+}
+
+#navbar > div > a{
+	text-decoration: none;
+	color: #FEFBF3;
+	font-size: 32px;
+	padding: 17px 20px;
+}
+#navbar > div > a:hover{
+	background: #FEFBF3;
+	color: #9D9D9D;
+}
+
+#navbar1{
+	font-size: 3.6vh;
+	float: right;
+	margin-top: 3vh;
+	display: none;
+}
+#navbar1 > a{
+	text-decoration: none;
+	color: #FEFBF3;
+	padding: 3vh;
+}
+#navbar1 > a:hover{
+	background: #FEFBF3;
+	color: #9D9D9D;
+}
+
+@media screen and (min-width: 760px){
+	#navbar > div > a {
+		display: none;
+	}
+	#navbar1{
+		display: block;
+	}
+}
+
+h1{
+	color: #79B4B7;
+	font-size: 10vh;
+	margin: 0;
+}
+h2{
+	color: #9D9D9D;
+	margin: 0;
+	font-size:5vh;
+}
+
+#welcome-section{
+	display: flex;
+	flex-direction: column;
+	top: 0;
+	height: 90vh;
+	width: 100%;
+	background: #FEFBF3;
+	text-align: center;
+}
+
+#welcome-section > div{
+	position: relative;
+	top:35vh;
+}
+
+#projects{
+	background: #79B4B7;
+	padding: 6vh 2.5vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.project-title{
+	color: #FEFBF3;
+	text-align: center;
+	font-size: 6vh;
+	margin: 3vh 0 6vh 0;
+}
+
+.grid-container{
+	display: grid;
+	grid-template-columns: auto;
+}
+
+@media screen and (min-width: 760px){
+	.grid-container{
+		grid-template-columns: auto auto;
+	}
+}
+
+.project-tile{
+	padding: 5vw;
+}
+
+.description{
+	text-align: left;
+}
+
+.description > a{
+	text-decoration: none;
+}
+
+.description > a > span{
+	font-weight: 700;
+	margin-top: 3vh;
+	font-size: 3.5vh;
+	color: #F8F0DF;
+}
+
+#link-hover{
+}
+
+#open-icon{
+	color: #F8F0DF;
+	font-size: 2.5vh;
+	display: none;
+}
+
+#link-hover:hover + #open-icon{
+	margin-left: 3px;
+	transform: translateY(-3px);
+	display: inline-block;
+	transition: 0.5s;
+}
+
+.description > p{
+	color: #FEFBF3;
+	font-size: 2.6vh;
+}
+
+/*
+#79B4B7; -- greenish
+#9D9D9D; -- greyish
+#F8F0DF; --caramelly
+#FEFBF3; -- whitish
+*/
+
+#socmed{
+	margin: 15vh auto;
+	font-size: 5vh;
+	width: 100%;
+	text-align: center;
+}
+#socmed > a{
+	text-decoration: none;
+	color: #9D9D9D;
+	padding: 2vh;
+}
+
+#socmed > a > i:hover{
+	transform: translateY(-1.5vh);
+	transition: 0.2s;
+}
+
+#socmed > h1{
+	font-size: 5vh;
+	margin-bottom: 3vh;
+}
+
+#footer{
+	font-size: 2vh;
+	text-align: center;
+	color: #79B4B7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

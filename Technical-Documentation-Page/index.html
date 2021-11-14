@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FCC Project: Technical Documentation</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" width="device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/CSS" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	
+	<body>
+		<div class="title">
+			<h1>SQL</h1>
+			<span>Structured Query Language: Technical Documentation</span>
+		</div>
+		<nav id="nav-bar">
+			
+			<header class="spc-header">CONTENTS</header>
+			<a href="#introduction">Introduction</a>
+			<a href="#syntax">SQL Syntax</a>
+			<a href="#select">SQL SELECT Statement</a>
+			<a href="#select_distinct">SQL SELECT DISTINCT Statement</a>
+			<a href="#where_clause">SQL Where Clause</a>
+			<a href="#and_or_not">SQL AND, OR and NOT Operators</a>
+			<a href="#order_by">SQL ORDER BY Keyword</a>
+			<a href="#insert_into">SQL INSERT INTO Statement</a>
+			<a href="#null_values">SQL NULL Values</a>
+			<a href="#update">SQL UPDATE Statement</a>
+			<a href="#delete">SQL DELETE Statement</a>
+		</nav>
+		<nav id="left-nav">
+				<header class="spc-header">SQL Documentation</header>
+				<a href="#introduction">Introduction</a>
+				<a href="#syntax">SQL Syntax</a>
+				<a href="#select">SQL SELECT Statement</a>
+				<a href="#select_distinct">SQL SELECT DISTINCT Statement</a>
+				<a href="#where_clause">SQL Where Clause</a>
+				<a href="#and_or_not">SQL AND, OR and NOT Operators</a>
+				<a href="#order_by">SQL ORDER BY Keyword</a>
+				<a href="#insert_into">SQL INSERT INTO Statement</a>
+				<a href="#null_values">SQL NULL Values</a>
+				<a href="#update">SQL UPDATE Statement</a>
+				<a href="#delete">SQL DELETE Statement</a>
+			</nav>
+		<div class="up-button">
+			<a href="#nav-bar"><i class="fa fa-sort-up"></i></a>
+		</div>
+		<main id="main-doc">
+			<section class="main-section" id="introduction">
+				<header>Introduction</header>
+				<p>SQL is a standard language for storing, manipulating and retrieving data in databases.</p>
+				<h2>What is SQL?</h2>
+				<ul>
+					<li>SQL stands for Structured Query Language</li>
+					<li>SQL lets you access and manipulate databases</li>
+					<li>SQL became a standard of the American National Standards Institute (ANSI) in 1986, and of the International Organization for Standardization (ISO) i-n 1987</li>
+				</ul>
+				<h2>What Can SQL do?</h2>
+				<ul>
+					<li>SQL can execute queries against a database</li>
+					<li>SQL can retrieve data from a database</li>
+					<li>SQL can insert records in a database</li>
+					<li>SQL can update records in a database</li>
+					<li>SQL can delete records from a database</li>
+					<li>SQL can create new databases</li>
+					<li>SQL can create new tables in a database</li>
+					<li>SQL can create stored procedures in a database</li>
+					<li>SQL can create views in a database</li>
+					<li>SQL can set permissions on tables, procedures, and views</li>
+				</ul>
+				<h2>SQL is a Standard - BUT....</h2>
+				<p>Although SQL is an ANSI/ISO standard, there are different versions of the SQL language.<br><br>
+
+				However, to be compliant with the ANSI standard, they all support at least the major commands (such as SELECT, UPDATE, DELETE, INSERT, WHERE) in a similar manner.<br><br>
+				
+				<strong>Note:</strong> Most of the SQL database programs also have their own proprietary extensions in addition to the SQL standard!
+				</p>
+				<h2>Using SQL in Your Web Site</h2>
+				<p>
+					To build a web site that shows data from a database, you will need:
+
+					An RDBMS database program (i.e. MS Access, SQL Server, MySQL)
+					To use a server-side scripting language, like PHP or ASP
+					To use SQL to get the data you want
+					To use HTML / CSS to style the page<br><br>
+
+					RDBMS
+					RDBMS stands for Relational Database Management System.<br><br>
+
+					RDBMS is the basis for SQL, and for all modern database systems such as MS SQL Server, IBM DB2, Oracle, MySQL, and Microsoft Access.<br><br>
+
+					The data in RDBMS is stored in database objects called tables. A table is a collection of related data entries and it consists of columns and rows.<br><br>
+
+					Look at the "Customers" table:<br><br>
+					
+					<table>
+					  <tr>
+						<th>Company</th>
+						<th>Contact</th>
+						<th>Country</th>
+					  </tr>
+					  <tr>
+						<td>Alfreds Futterkiste</td>
+						<td>Maria Anders</td>
+						<td>Germany</td>
+					  </tr>
+					  <tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+					  </tr>
+					  <tr>
+						<td>Ernst Handel</td>
+						<td>Roland Mendel</td>
+						<td>Austria</td>
+					  </tr>
+					  <tr>
+						<td>Island Trading</td>
+						<td>Helen Bennett</td>
+						<td>UK</td>
+					  </tr>
+					  <tr>
+						<td>Laughing Bacchus Winecellars</td>
+						<td>Yoshi Tannamuri</td>
+						<td>Canada</td>
+					  </tr>
+					  <tr>
+						<td>Magazzini Alimentari Riuniti</td>
+						<td>Giovanni Rovelli</td>
+						<td>Italy</td>
+					  </tr>
+					</table><br><br>
+					
+					Example<br>
+					<code>SELECT * FROM Customers;</code><br><br><br>
+					
+					Every table is broken up into smaller entities called fields. The fields in the Customers table consist of CustomerID, CustomerName, ContactName, Address, City, PostalCode and Country. A field is a column in a table that is designed to maintain specific information about every record in the table.<br><br>
+
+					A record, also called a row, is each individual entry that exists in a table. For example, there are 91 records in the above Customers table. A record is a horizontal entity in a table.<br><br>
+
+					A column is a vertical entity in a table that contains all information associated with a specific field in a table.<br><br>
+				<p>
+			</section>
+			
+			<section class="main-section" id="syntax">
+				<header>SQL Syntax</header>
+				<h2>Database Tables</h2>
+				<p>A database most often contains one or more tables. Each table is identified by a name (e.g. "Customers" or "Orders"). Tables contain records (rows) with data.</p>
+				<h2>SQL Statements</h2>
+				<p>Most of the actions you need to perform on a database are done with SQL statements.
+				Keep in Mind That...<br><br>
+				SQL keywords are NOT case sensitive: select is the same as SELECT
+				</p>
+				<h2>Semicolon after SQL Statements?</h2>
+				<p>Some database systems require a semicolon at the end of each SQL statement.<br><br>
+
+				Semicolon is the standard way to separate each SQL statement in database systems that allow more than one SQL statement to be executed in the same call to the server.
+				</p>
+			</section>
+			
+			<section class="main-section" id="select">
+				<header>SQL SELECT Statement</header>
+				<p>TThe SELECT statement is used to select data from a database.<br><br>
+					SELECT Syntax:<br>
+					<code>SELECT column1, column2, ...<br>
+					FROM table_name;</code><br><br>
+					Here, column1, column2, ... are the field names of the table you want to select data from. If you want to select all the fields available in the table, use the following syntax:<br>
+					<code>SELECT * FROM table_name;</code>
+				</p>
+			</section>
+			
+			<section class="main-section" id="select_distinct">
+				<header>SQL SELECT DISTINCT Statement</header>
+				<p>
+					The SELECT DISTINCT statement is used to return only distinct (different) values.<br><br>
+					Inside a table, a column often contains many duplicate values; and sometimes you only want to list the different (distinct) values.<br><br>
+					<code>SELECT DISTINCT Syntax<br>
+					SELECT DISTINCT column1, column2, ...<br>
+					FROM table_name;</code><br>
+					<h2>SELECT Example Without DISTINCT</h2>
+					The following SQL statement selects all (including the duplicates) values from the "Country" column in the "Customers" table:<br><br>
+
+					Example
+					<code>SELECT Country FROM Customers;</code>
+				</p>
+			</section>
+			
+			<section class="main-section" id="where_clause">
+				<header>SQL Where Clause</header>
+				<p>
+				The WHERE clause is used to filter records.<br>
+
+				It is used to extract only those records that fulfill a specified condition.<br><br>
+
+				<h2>WHERE Syntax</h2>
+				SELECT column1, column2, ...<br>
+				FROM table_name<br><br>
+				WHERE condition;<br>
+
+				<strong>Note:</strong> The WHERE clause is not only used in SELECT statements, it is also used in UPDATE, DELETE, etc.!<br><br>
+
+
+				<h2>WHERE Clause Example</h2>
+				The following SQL statement selects all the customers from the country "Mexico", in the "Customers" table:<br><br>
+
+				Example<br>
+				<code>SELECT * FROM Customers<br>
+				WHERE Country='Mexico';</code><br>
+				</p>
+			</section>
+			
+			<section class="main-section" id="and_or_not">
+				<header>SQL AND, OR and NOT Operators</header>
+				<p>
+					The WHERE clause can be combined with AND, OR, and NOT operators.<br>
+
+					The AND and OR operators are used to filter records based on more than one condition:<br><br>
+
+					The AND operator displays a record if all the conditions separated by AND are TRUE.
+					The OR operator displays a record if any of the conditions separated by OR is TRUE.
+					The NOT operator displays a record if the condition(s) is NOT TRUE.<br><br>
+
+					<h2>AND Syntax</h2>
+					SELECT column1, column2, ...<br>
+					FROM table_name<br>
+					WHERE condition1 AND condition2 AND condition3 ...;<br>
+					OR Syntax<br>
+					SELECT column1, column2, ...<br>
+					FROM table_name<br>
+					WHERE condition1 OR condition2 OR condition3 ...;<br>
+					NOT Syntax<br>
+					SELECT column1, column2, ...<br>
+					FROM table_name<br>
+					WHERE NOT condition;</code><br><br>
+
+
+					<h2>AND Example</h2>
+					The following SQL statement selects all fields from "Customers" where country is "Germany" AND city is "Berlin":<br><br>
+
+					Example<br>
+					<code>SELECT * FROM Customers<br>
+					WHERE Country='Germany' AND City='Berlin';</code>
+
+					<h2>OR Example</h2>
+					The following SQL statement selects all fields from "Customers" where city is "Berlin" OR "München":<br><br>
+
+					Example<br>
+					<code>SELECT * FROM Customers<br>
+					WHERE City='Berlin' OR City='München';</code><br>
+
+					<h2>NOT Example</h2>
+					The following SQL statement selects all fields from "Customers" where country is NOT "Germany":<br><br>
+
+					Example<br>
+					SELECT * FROM Customers<br>
+					WHERE NOT Country='Germany';<br>
+
+					<h2>Combining AND, OR and NOT</h2>
+					You can also combine the AND, OR and NOT operators.<br><br>
+
+					The following SQL statement selects all fields from "Customers" where country is "Germany" AND city must be "Berlin" OR "München" (use parenthesis to form complex expressions):<br><br>
+
+					Example<br>
+					<code>SELECT * FROM Customers<br>
+					WHERE Country='Germany' AND (City='Berlin' OR City='München');</code><br>
+				</p>
+			</section>
+			
+			<section class="main-section" id="order_by">
+				<header>SQL ORDER BY Keyword</header>
+				<p>
+					The ORDER BY keyword is used to sort the result-set in ascending or descending order.<br><br>
+
+					The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.<br><br>
+
+					<h2>ORDER BY Syntax</h2>
+					<code>SELECT column1, column2, ...<br>
+					FROM table_name<br>
+					ORDER BY column1, column2, ... ASC|DESC;</code><br><br>
+
+
+					<h2>ORDER BY Example</h2>
+					The following SQL statement selects all customers from the "Customers" table, sorted by the "Country" column:<br><br>
+
+					Example<br>
+					<code>SELECT * FROM Customers<br>
+					ORDER BY Country;</code><br><br>
+
+
+					<h2>ORDER BY DESC Example</h2>
+					The following SQL statement selects all customers from the "Customers" table, sorted DESCENDING by the "Country" column:<br><br>
+
+					Example<br>
+					<code>SELECT * FROM Customers<br>
+					ORDER BY Country DESC;</code><br>
+
+					<h2>ORDER BY Several Columns Example 2</h2>
+					The following SQL statement selects all customers from the "Customers" table, sorted ascending by the "Country" and descending by the "CustomerName" column:<br><br>
+
+					Example<br>
+					<code>SELECT * FROM Customers<br>
+					ORDER BY Country ASC, CustomerName DESC;</code><br>
+				</p>
+			</section>
+			
+			<section class="main-section" id="insert_into">
+				<header>SQL INSERT INTO Statement</header>
+				<p>
+					The INSERT INTO statement is used to insert new records in a table.<br><br>
+
+					INSERT INTO Syntax
+					It is possible to write the INSERT INTO statement in two ways:<br><br>
+					<ol>
+						<li>Specify both the column names and the values to be inserted:<br><br>
+
+						<code>INSERT INTO table_name (column1, column2, column3, ...)<br>
+						VALUES (value1, value2, value3, ...);</code></li><br><br>
+						<li>If you are adding values for all the columns of the table, you do not need to specify the column names in the SQL query. However, make sure the order of the values is in the same order as the columns in the table. Here, the INSERT INTO syntax would be as follows:<br><br>
+						<code>INSERT INTO table_name<br>
+						VALUES (value1, value2, value3, ...);</code><br></li>
+					</ol>
+					<h2>Insert Data Only in Specified Columns</h2>
+					It is also possible to only insert data in specific columns.<br><br>
+
+					The following SQL statement will insert a new record, but only insert data in the "CustomerName", "City", and "Country" columns (CustomerID will be updated automatically):<br><br>
+
+					Example<br>
+					<code>INSERT INTO Customers (CustomerName, City, Country)<br>
+					VALUES ('Cardinal', 'Stavanger', 'Norway');</code><br>
+				</p>
+			</section>
+			
+			<section class="main-section" id="null_values">
+				<header>SQL NULL Values</header>
+				<p>
+					<h2>What is a NULL Value?</h2>
+					A field with a NULL value is a field with no value.<br><br>
+
+					If a field in a table is optional, it is possible to insert a new record or update a record without adding a value to this field. Then, the field will be saved with a NULL value.<br><br>
+
+					<strong>Note:</strong> A NULL value is different from a zero value or a field that contains spaces. A field with a NULL value is one that has been left blank during record creation!<br><br>
+
+					<h2>How to Test for NULL Values?</h2>
+					It is not possible to test for NULL values with comparison operators, such as =, <, or <>.<br><br>
+
+					We will have to use the IS NULL and IS NOT NULL operators instead.<br><br>
+
+					<code>IS NULL Syntax<br>
+					SELECT column_names<br>
+					FROM table_name<br>
+					WHERE column_name IS NULL;<br>
+					IS NOT NULL Syntax<br>
+					SELECT column_names<br>
+					FROM table_name<br>
+					WHERE column_name IS NOT NULL;</code><br>
+				</p>
+			</section>
+			
+			<section class="main-section" id="update">
+				<header>SQL UPDATE Statement</header>
+				<p>
+					The UPDATE statement is used to modify the existing records in a table.<br><br>
+
+					<h2>UPDATE Syntax</h2>
+					<code>UPDATE table_name<br>
+					SET column1 = value1, column2 = value2, ...<br>
+					WHERE condition;</code><br><br>
+
+					<strong>Note:</strong> Be careful when updating records in a table! Notice the WHERE clause in the UPDATE statement. The WHERE clause specifies which record(s) that should be updated. If you omit the WHERE clause, all records in the table will be updated!<br><br>
+
+					<h2>UPDATE Table</h2>
+					The following SQL statement updates the first customer (CustomerID = 1) with a new contact person and a new city.<br><br>
+
+					Example<br>
+					<code>UPDATE Customers<br>
+					SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'<br>
+					WHERE CustomerID = 1;</code><br><br>
+
+					<h2>UPDATE Multiple Records</h2>
+					It is the WHERE clause that determines how many records will be updated.<br><br>
+
+					The following SQL statement will update the ContactName to "Juan" for all records where country is "Mexico":<br><br>
+
+					Example<br>
+					<code>UPDATE Customers<br>
+					SET ContactName='Juan'<br>
+					WHERE Country='Mexico';</code><br>
+
+					<h3>Update Warning!</h3>
+					Be careful when updating records. If you omit the WHERE clause, ALL records will be updated!<br><br>
+				</p>
+			</section>
+			
+			<section class="main-section" id="delete">
+				<header>SQL DELETE Statement</header>
+				<p>
+					The DELETE statement is used to delete existing records in a table.<br><br>
+
+					<h2>DELETE Syntax</h2>
+					DELETE FROM table_name WHERE condition;<br><br>
+					<stron>Note:</strong> Be careful when deleting records in a table! Notice the WHERE clause in the DELETE statement. The WHERE clause specifies which record(s) should be deleted. If you omit the WHERE clause, all records in the table will be deleted!<br><br>
+
+					<h2>SQL DELETE Example</h2>
+					The following SQL statement deletes the customer "Alfreds Futterkiste" from the "Customers" table:<br><br>
+
+					Example<br>
+					<code>DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';</code><br><br>
+
+					<h2>Delete All Records</h2>
+					It is possible to delete all rows in a table without deleting the table. This means that the table structure, attributes, and indexes will be intact:<br><br>
+
+					<code>DELETE FROM table_name;</code><br><br>
+					
+					The following SQL statement deletes all rows in the "Customers" table, without deleting the table:<br><br>
+
+					Example<br>
+					<code>DELETE FROM Customers;</code><br><br>
+				</p>
+			</section>
+		</main>
+		<footer>
+			<span>&copy;2021 Disclaimer: The contents on this page are from <a href="https://www.w3schools.com">w3schools.com</a>. This is a personal project of Jeff Matriz for <a href="https://www.freeCodeCamp.org">freeCodeCamp.org</a> and not for commercial use. Click the associated links to learn more.</span>
+		</footer>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
