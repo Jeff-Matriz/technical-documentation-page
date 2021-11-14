@@ -1,0 +1,49 @@
+html, body{
+
+}
+
+.home{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	padding: 0px;
+	background: yellow;
+}
+
+@media screen and (max-width: 500px){
+	.home{
+		position: fixed;
+		border-bottom: 2px solid blue;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.container{
+	display: flex;
+	flex-direction: row;
+	top: 10px;
+	right: 10px;
+	float: right;
+	font-size: 25px;
+	padding: 10px;
+	background: yellow;
+}
+
+a{
+	margin-right: 30px;
+}
+
+@media screen and (max-width: 500px){
+	.container{
+		flex-direction: column;
+		position: absolute;
+		top:80px;
+		left: 0;
+		width: 100%;
+	}
+	.container > a{
+		text-align: center;
+		border-bottom: 2px solid blue;
+	}
+}

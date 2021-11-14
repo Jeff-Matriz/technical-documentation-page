@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap');
+
+html, body{
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+main{
+	position: relative;
+	top: 60px;
+	bottom: 50px;
+}
+
+#header{
+	position: fixed;
+	overflow: hidden;
+	background-color: rgb(80, 95, 150);
+	height: 60px;
+	width: 100%;
+	z-index: 99;
+}
+
+#header-img{
+	position: static;
+	width: 50px;
+	height: 50px;
+	padding-top: 5px;
+	margin-left: 20px;
+	float: left;
+}
+
+#title{
+	font-family: 'Raleway', sans-serif;
+	float: left;
+	padding: 10px;
+	color: white;
+	margin: 0;
+}
+
+#nav-bar{
+	position: fixed;
+	right: 0;
+	display: flex;
+	flex-direction: row;
+	background-color: rgb(80, 95, 150);
+}
+
+@media screen and (max-width: 780px){
+	#nav-bar{
+		display: none;
+	}
+}
+
+.bars{
+	display: flex;
+	position: fixed;
+	top: 5px;
+	right: 15px;
+	font-size: 40px;
+	color: white;
+	padding: 5px 10px;
+}
+
+.bars:hover{
+	background: white;
+	color: rgb(80, 95, 150);
+}
+
+.hover-menu{
+	display: none;
+	position: fixed;
+	top: 30px;
+	right: 40px;
+	background: rgb(80, 95, 150);
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	font-size: 24px;
+	z-index: 99;
+}
+
+.bars:hover .hover-menu{
+	display: flex;
+	flex-direction: column;
+}
+
+.hover-menu > a{
+	text-decoration: none;
+	color: white;
+	padding: 10px 20px 10px 10px;
+}
+
+.hover-menu a:hover{
+	background: white;
+	color: rgb(80, 95, 150);
+}
+
+@media screen and (min-width: 780px){
+	.bars{
+		display: none;
+	}
+}
+
+#nav-bar a{
+	text-decoration: none;
+	font-size: 25px;
+	padding: 14px 20px;
+	margin-right: 10px;
+}
+
+#nav-bar a:link{
+	color: white;
+}
+
+#nav-bar a:visited{
+	color: white;
+}
+
+#nav-bar a:hover{
+	background: white;
+	color: rgb(80, 95, 150);
+}
+
+#banner{
+	width: 100%;
+	height: auto;
+}
+
+main{
+	display: block;
+	text-align: center;
+}
+
+#form{
+	text-align: center;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#disc{
+	display: inline-block;
+	margin-top: 30px;
+	font-size: 30px;
+}
+
+#email{
+	font-size: 15px;
+	margin-top: 30px;
+	margin-bottom: 5px;
+	padding: 10px;
+	width: 290px;
+}
+
+#submit{
+	font-size: 15px;
+	padding: 10px;
+	width: 140px;
+	background: rgb(80, 95, 150);
+	color: white;
+	margin-bottom: 5vw;
+}
+
+#submit:hover{
+	cursor: pointer;
+	background: rgb(80, 95, 180);
+	color: white;
+}
+
+.feature{
+	height: 250px;
+	width: 250px;
+}
+
+figcaption{
+	width: 245px;
+	margin-top: 15px;
+}
+
+.flex-container{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	background: rgb(80, 95, 150);
+	width: 100%;
+}
+
+.flex-container > div{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	padding: 50px;
+	color: white;
+}
+
+.feat-text{
+	color: white;
+	padding: 50px 0;
+	text-align: center;
+	width: 100%;
+	background: rgb(80, 95, 150);
+	margin: 50px 0 0 0;
+}
+
+.price{
+	padding: 30px 0;
+	text-align: center;
+	width: 100%;
+	margin: 30px 0 0 0;
+	font-size: 48px;
+}
+
+@media screen and (max-width: 760px){
+  .flex-container {
+    flex-direction: column;
+	justify-content: center;
+  }
+}
+
+@media screen and (max-width: 760px){
+	iframe{
+		width: 360px;
+		height: 200px;
+		margin: 60px 0;
+	}
+}
+
+.price-image{
+	height: 400px;
+	width: 400px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 30px;
+}
+
+.price-container{
+	display: flex;
+	top: 50px;
+	bottom: 50px;
+	flex-direction: column;
+	text-align: center;
+	font-size: 32px;
+}
+
+@media screen and (min-width: 760px){
+	.price-container{
+		flex-direction: row;
+		justify-content: center;
+	}
+}
+
+.submit-order{
+	font-size: 24px;
+	padding: 10px;
+	cursor: pointer;
+	color: white;
+	background: rgb(80, 95, 150);
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+	margin: 10px;
+}
+
+.spc{
+	font-size: 20px;
+	padding: 10px;
+}
+
+button:hover{
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+footer{
+	text-align: center;
+	position: relative;
+	top: 100px;
+	bottom: 0;
+	background: rgb(80, 95, 150);
+	color: white;
+	padding: 30px 5px;
+}
+
+
+
+
+
+
+
+
